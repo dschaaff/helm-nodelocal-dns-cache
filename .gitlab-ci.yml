@@ -1,0 +1,28 @@
+stages:
+- test
+- deploy
+
+include:
+  - project: 'CordialExperiences/ops/gitlab-shared-snippets'
+    ref: 8c3ce08f8cedec6e8155109f97b11bd9077b46c3
+    file: '/templates/app-pipelines/.helm-dev-setup.yml'
+
+services:
+  - docker:dind
+
+variables:
+  DOCKER_HOST: "tcp://localhost:2375"
+
+helmunit:
+  stage: test
+  image: 960048260646.dkr.ecr.us-west-2.amazonaws.com/helm-tester:latest
+  script:
+    - helm template nodelocal-dns-cache | kubeval -v 1.14.6 --strict
+
+helmpush:
+  stage: deploy
+  image: 960048260646.dkr.ecr.us-west-2.amazonaws.com/helm-tester:latest
+  only:
+    - master
+  script:
+    - helm push ./nodelocal-dns-cache https://cordial-charts.dev.cordialdev.com
