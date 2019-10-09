@@ -36,7 +36,7 @@ spec:
           requests:
             cpu: 25m
             memory: 5Mi
-        args: [ "-localip", "{{ .Values.localDns }}", "-conf", "/etc/Corefile" ]
+        args: [ "-localip", "{{ .Values.localDns }}", "-conf", "/etc/coredns/Corefile" ]
         securityContext:
           privileged: true
         ports:
@@ -112,7 +112,7 @@ spec:
           requests:
             cpu: 25m
             memory: 5Mi
-        args: [ "-localip", "{{ .Values.localDns }}", "-conf", "/etc/Corefile" ]
+        args: [ "-localip", "{{ .Values.localDns }}", "-conf", "/etc/coredns/Corefile" ]
         securityContext:
           privileged: true
         ports:
