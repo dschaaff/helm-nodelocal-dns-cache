@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: k8s.gcr.io/k8s-dns-node-cache
-  tag: 1.15.0
+  tag: 1.15.2
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
