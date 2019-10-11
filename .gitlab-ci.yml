@@ -26,3 +26,4 @@ helmpush:
     - master
   script:
     - helm push ./nodelocal-dns-cache https://cordial-charts.dev.cordialdev.com
+    - helm push ./nodelocal-dns-cache --username cordial --password $PROD_HELM_REPO_PASSWORD https://cordial-charts.ops.cordial.io
