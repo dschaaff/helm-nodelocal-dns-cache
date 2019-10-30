@@ -56,3 +56,10 @@ data:
         }
         prometheus :9253
         }
+{{- if .Values.consulIP }}
+    consul {
+       errors
+       cache 30
+       forward . {{ .Values.consulIP }}
+       }
+{{- end }}
