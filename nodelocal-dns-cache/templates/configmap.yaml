@@ -60,6 +60,7 @@ data:
     consul {
        errors
        cache 30
+       bind {{ .Values.localDns }}
        forward . {{ .Values.consulIP }}
        }
 {{- end }}
