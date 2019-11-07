@@ -63,7 +63,7 @@ spec:
         - name: config-volume
           mountPath: /etc/coredns
       tolerations:
-{{ toYaml .Values.daemonset.tolerations | indent 8 }}
+{{ toYaml .Values.tolerations | indent 8 }}
       volumes:
       - name: xtables-lock
         hostPath:
