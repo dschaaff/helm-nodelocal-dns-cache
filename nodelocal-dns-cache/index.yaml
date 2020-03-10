@@ -3,11 +3,11 @@ entries:
   nodelocal-dns-cache:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-03-10T16:13:57.873101-07:00"
+    created: "2020-03-10T16:17:33.727195-07:00"
     description: A Helm chart for Kubernetes
     digest: 269e2ee5deeca7cc6ce4828dfa9378ad1e55ecaf71118b22ce3c71f066f0bec8
     name: nodelocal-dns-cache
     urls:
-    - http://danielschaaff.com/helm-draino/nodelocal-dns-cache-0.1.10.tgz
+    - https://github.com/dschaaff/helm-nodelocal-dns-cache/nodelocal-dns-cache-0.1.10.tgz
     version: 0.1.10
-generated: "2020-03-10T16:13:57.868443-07:00"
+generated: "2020-03-10T16:17:33.72658-07:00"
