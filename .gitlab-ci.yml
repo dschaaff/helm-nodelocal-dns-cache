@@ -3,9 +3,9 @@ stages:
 - deploy
 
 include:
-  - project: 'CordialExperiences/ops/gitlab-shared-snippets'
-    ref: 8c3ce08f8cedec6e8155109f97b11bd9077b46c3
-    file: '/templates/app-pipelines/.helm-dev-setup.yml'
+  - project: 'CordialExperiences/apps/app-gitlab-snippets'
+    ref: master
+    file: '.helm-dev-setup.yml'
 
 services:
   - docker:dind
@@ -26,4 +26,4 @@ helmpush:
     - master
   script:
     - helm push ./nodelocal-dns-cache https://cordial-charts.dev.cordialdev.com
-    - helm push ./nodelocal-dns-cache --username cordial --password $PROD_HELM_REPO_PASSWORD https://cordial-charts.ops.cordial.io
+    - helm push ./nodelocal-dns-cache --username cordial --password $PROD_HELM_REPO_PASSWORD https://cordial-charts.us-west-1.cordial.io
